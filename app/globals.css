@@ -2,10 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @theme {
   --color-text-black: #2B2C35;
   --color-primary-blue: #2B59FF;
@@ -30,7 +26,15 @@
 }
 
 .padding-y {
+  @apply py-24;
+}
+
+.padding-top {
   @apply py-4;
+}
+ 
+.padding-top-footer {
+  @apply py-12;
 }
 
 .flex-center {
@@ -54,11 +58,11 @@
 }
 
 .hero__title {
-  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold;
+  @apply 2xl:text-[72px] sm:text-[58px] text-[50px] font-semibold;
 }
 
 .hero__subtitle {
-  @apply text-[27px] font-light mt-5;
+  @apply text-[27px] font-light mt-5 mb-5;
   color: var(--color-text-black)
 }
 
