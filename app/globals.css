@@ -7,6 +7,7 @@
   --color-primary-blue: #2B59FF;
   --color-light-white: rgba(59,60,152,0.03);
   --color-text-grey: #747A88;
+  --color-primary: #F5F8FF;
 }
 
 * {
@@ -19,6 +20,9 @@
 /* START: General styles */
 .max-width {
   @apply max-w-[1440px] mx-auto;
+}
+.margin-left {
+  @apply ml-4
 }
 
 .padding-x {
@@ -48,7 +52,7 @@
 }
 
 .custom-btn {
-  @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
+  @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none cursor-pointer;
 }
 /* END: General styles */
 
@@ -88,7 +92,7 @@
 }
 
 .home__filters {
-  @apply mt-12 w-full items-center flex-wrap gap-5;
+  @apply mt-12 w-full items-center flex-wrap gap-5 mb-6;
   display: flex;
   justify-content: space-between;
   align-items: center
@@ -109,9 +113,8 @@
 
 /* START: Car Card styles */
 .car-card {
-  @apply flex flex-col p-6 justify-center items-start hover:bg-white hover:shadow-md rounded-3xl;
+  @apply flex flex-col p-6 justify-center items-start bg-primary hover:bg-gray-100 hover:shadow-md rounded-3xl;
   color: var(--color-text-black);
-  background-color: var(--color-primary-blue)
 }
 
 .car-card__content {

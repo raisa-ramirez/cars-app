@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { footerLinks } from "./_constants";
+import { footerLinks } from "../_constants";
 import Link from "next/link";
 
 const Footer = () => (
@@ -31,7 +31,7 @@ const Footer = () => (
         </div>
 
         <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 padding-x padding-top-footer">
-            <p>@2025 Carhub. All rights reserved</p>
+            <p className="text-gray-700">@2025 Carhub. All rights reserved</p>
             <div className="footer__copyrights-link">
                 <Link href="/" className="text-gray-500">Privacy Policy</Link>
                 <Link href="/" className="text-gray-500">Terms of Use</Link>
