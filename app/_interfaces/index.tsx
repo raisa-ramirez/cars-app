@@ -33,3 +33,23 @@ export interface CarProps {
     transmission:string;
     year:number;
 }
+
+export interface CarDetailsProps {
+    isOpen: boolean;
+    closeModal : () => void;
+    car: CarProps
+}
+
+export interface SearchButtonProps {
+    type?: "button" | "submit";
+    manufacturer: string;
+    searchCar: (e:React.FormEventHandler<HTMLFormElement>) => void;
+    otherClasses: string;
+}
+
+export interface FilterProps {
+    manufacturer: string;
+    year: number;
+    fuel: string;
+    model: string;
+}

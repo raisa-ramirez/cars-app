@@ -1,6 +1,13 @@
+import { CarProps, FilterProps } from "@/app/_interfaces";
 
-const fetchCars = async ()  => {
-    const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla';
+const fetchCars = async (filters: FilterProps)  => {
+    const {manufacturer, year, fuel, model} = filters
+    
+    const url = new URL('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars')
+    url.searchParams.append("make", manufacturer)
+    url.searchParams.append("year", year.toString())
+    url.searchParams.append("fuel_type", fuel)
+    url.searchParams.append("model", model)
 
     const headers = {
 		'x-rapidapi-key': '6f660796dbmsh7fb594778ff81c6p14d62ajsnd9380f9442ea',

@@ -1,11 +1,16 @@
 import { Hero, CustomFilter, SearchBar, CarCard } from "./_components";
 import { fetchCars } from "@/utils";
 
+export default async function Home({searchParams}:any) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || '',
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || '',
+    model: searchParams.model || ''
+  })
 
-export default async function Home() {
-  const allCars = await fetchCars()
-  // const allCars : any[] = []
-  // console.log(allCars)
+  console.log(allCars)
+
   const isDataEmpty = !Array.isArray(allCars) || allCars.length<1 || !allCars
 
   return <main className="overflow-hidden">

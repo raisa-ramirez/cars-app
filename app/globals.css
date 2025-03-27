@@ -36,6 +36,10 @@
 .padding-top {
   @apply py-4;
 }
+
+.p-all {
+  @apply p-6;
+}
  
 .padding-top-footer {
   @apply py-12;
@@ -49,6 +53,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center
+}
+
+.bg-cover {
+  background-image: url('/pattern.png');
 }
 
 .custom-btn {
@@ -171,7 +179,6 @@
 
 .car-details__main-image {
   @apply relative w-full h-40 bg-cover bg-center rounded-lg;
-  background-image: url('/pattern.png');
 }
 /* END: Car Details styles */
 
