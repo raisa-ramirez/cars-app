@@ -4,11 +4,12 @@ import { yearsOfProduction, fuels } from "./_constants";
 import { HomeProps } from "./_interfaces";
 
 export default async function Home({searchParams}:HomeProps) {
+  const {manufacturer, year, fuel, model} = await searchParams;
   const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer || 'toyota',
-    year: searchParams.year || 2022,
-    fuel: searchParams.fuel || '',
-    model: searchParams.model || 'corolla'
+    manufacturer: manufacturer || '',
+    year: year || 2022,
+    fuel: fuel || '',
+    model: model || ''
   })
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length<1 || !allCars
