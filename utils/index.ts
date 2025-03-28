@@ -1,13 +1,9 @@
-import { CarProps, FilterProps } from "@/app/_interfaces";
+import { FilterProps } from "@/app/_interfaces";
 
 const fetchCars = async (filters: FilterProps)  => {
     const {manufacturer, year, fuel, model} = filters
     
-    const url = new URL('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars')
-    url.searchParams.append("make", manufacturer)
-    url.searchParams.append("year", year.toString())
-    url.searchParams.append("fuel_type", fuel)
-    url.searchParams.append("model", model)
+    const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&fuel_type=${fuel}`
 
     const headers = {
 		'x-rapidapi-key': '6f660796dbmsh7fb594778ff81c6p14d62ajsnd9380f9442ea',
@@ -35,7 +31,17 @@ const calculateRent = (city_mpg:number, year:number) => {
     return rentalRatePerDay.toFixed(0);
 }
 
+const updateSearchParams = (type:string, value:string) => {
+    const searchParams = new URLSearchParams(window.location.search)
+    searchParams.set(type, value)
+    
+    const newPathName = `${window.location.pathname}?${searchParams.toString()}#discover`
+
+    return newPathName;
+}
+
 export {
     fetchCars,
-    calculateRent
+    calculateRent,
+    updateSearchParams
 }

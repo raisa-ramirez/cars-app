@@ -10,8 +10,14 @@ export interface CustomButtonProps {
     handleClick?: MouseEventHandler<HTMLElement>
 }
 
+export interface OptionsProps {
+    title: string;
+    value: string;
+}
+
 export interface CustomFilterPros {
-    title:string
+    title:string;
+    options: OptionsProps[];
 }
 
 export interface SearchManufacturerProps {
@@ -52,4 +58,8 @@ export interface FilterProps {
     year: number;
     fuel: string;
     model: string;
+}
+
+export interface HomeProps {
+    searchParams: FilterProps;
 }

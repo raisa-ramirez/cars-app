@@ -28,7 +28,7 @@ const SearchBar = () => {
         model?searchParams.set('model', model):searchParams.delete('model')
         manufacturer?searchParams.set('make', manufacturer):searchParams.delete('make')
         
-        const newPathName = `${window.location.pathname}?${searchParams.toString()}`
+        const newPathName = `${window.location.pathname}?${searchParams.toString()}#discover`
         router.push(newPathName)
     }
 

@@ -1,15 +1,15 @@
 import { Hero, CustomFilter, SearchBar, CarCard } from "./_components";
 import { fetchCars } from "@/utils";
+import { yearsOfProduction, fuels } from "./_constants";
+import { HomeProps } from "./_interfaces";
 
-export default async function Home({searchParams}:any) {
+export default async function Home({searchParams}:HomeProps) {
   const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer || '',
+    manufacturer: searchParams.manufacturer || 'toyota',
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || '',
-    model: searchParams.model || ''
+    model: searchParams.model || 'corolla'
   })
-
-  console.log(allCars)
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length<1 || !allCars
 
@@ -25,8 +25,8 @@ export default async function Home({searchParams}:any) {
       <div className="home__filters">
         <SearchBar />
         <div className="home__filter-container">
-          <CustomFilter title="fuel"/>
-          <CustomFilter title="year"/>
+          <CustomFilter title="fuel" options={fuels}/>
+          <CustomFilter title="year" options={yearsOfProduction}/>
         </div>
       </div>
 
