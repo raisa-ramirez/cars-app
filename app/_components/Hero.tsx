@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
     const handleExplore = () => {
-        console.log('Ready to explore...')
+        alert("We're working on it...")
     }
 
     return <div className="hero">

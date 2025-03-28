@@ -54,7 +54,7 @@ export interface SearchButtonProps {
 }
 
 export interface FilterProps {
-    manufacturer: string;
+    make: string;
     year: number;
     fuel: string;
     model: string;

@@ -1,9 +1,8 @@
 import { FilterProps } from "@/app/_interfaces";
 
 const fetchCars = async (filters: FilterProps)  => {
-    const {manufacturer, year, fuel, model} = filters
-    
-    const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&fuel_type=${fuel}`
+    const {make, year, fuel, model} = filters    
+    const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${make}&year=${year}&model=${model}&fuel_type=${fuel}`
 
     const headers = {
 		'x-rapidapi-key': '6f660796dbmsh7fb594778ff81c6p14d62ajsnd9380f9442ea',

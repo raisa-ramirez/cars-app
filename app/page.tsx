@@ -4,9 +4,9 @@ import { yearsOfProduction, fuels } from "./_constants";
 import { HomeProps } from "./_interfaces";
 
 export default async function Home({searchParams}:HomeProps) {
-  const {manufacturer, year, fuel, model} = await searchParams;
+  const { make, year, fuel, model } = await searchParams;
   const allCars = await fetchCars({
-    manufacturer: manufacturer || '',
+    make: make || '',
     year: year || 2022,
     fuel: fuel || '',
     model: model || ''
