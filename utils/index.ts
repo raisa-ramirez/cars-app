@@ -1,7 +1,7 @@
 import { FilterProps } from "@/app/_interfaces";
 
 const fetchCars = async (filters: FilterProps)  => {
-    const {make, year, fuel, model} = filters    
+    const {make, year, fuel, model} = filters
     const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${make}&year=${year}&model=${model}&fuel_type=${fuel}`
 
     const headers = {
@@ -11,7 +11,7 @@ const fetchCars = async (filters: FilterProps)  => {
 
     const response = await fetch(url, {headers: headers})
 	const result = await response.json()
- 
+
     return result
 }
 
@@ -33,7 +33,7 @@ const calculateRent = (city_mpg:number, year:number) => {
 const updateSearchParams = (type:string, value:string) => {
     const searchParams = new URLSearchParams(window.location.search)
     searchParams.set(type, value)
-    
+
     const newPathName = `${window.location.pathname}?${searchParams.toString()}#discover`
 
     return newPathName;
